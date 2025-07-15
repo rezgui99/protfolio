@@ -1,0 +1,174 @@
+:root {
+  --primary-color: #0047AB;
+  --secondary-color: #FFD500;
+  --background-color: #f0f4f8;
+  --text-color: #333;
+  --box-shadow-light: rgba(0, 0, 0, 0.05);
+  --box-shadow-hover: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* En-tête */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 100px 20px 60px;
+  text-align: center;
+  box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.cv-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 2px solid transparent;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.cv-button:hover,
+.cv-button:focus-visible {
+  background-color: transparent;
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  outline: none;
+}
+
+/* Sections */
+section {
+  padding: 50px 25px;
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--box-shadow-light);
+  transition: box-shadow 0.3s ease;
+}
+
+section:hover,
+section:focus-within {
+  box-shadow: 0 6px 14px var(--box-shadow-hover);
+}
+
+section h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-left: 5px solid var(--secondary-color);
+  padding-left: 10px;
+}
+
+/* Liens */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+  color: var(--secondary-color);
+  outline: none;
+}
+
+/* Projets */
+.project-card {
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px var(--box-shadow-hover);
+  outline: none;
+}
+
+/* Expérience */
+.experience-card {
+  background-color: #f4f4f4;
+  border-left: 5px solid var(--primary-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.experience-card:hover,
+.experience-card:focus-within {
+  background-color: #eee;
+  outline: none;
+}
+
+/* Responsive (mobile) */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .cv-button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Photo de profil */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--secondary-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.profile-pic:hover,
+.profile-pic:focus-visible {
+  transform: scale(1.05);
+  outline: none;
+}
