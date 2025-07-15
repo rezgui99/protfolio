@@ -10,10 +10,47 @@
 body {
   font-family: "Segoe UI", sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 60px 0 0 0; /* padding top = hauteur navbar pour éviter recouvrement */
   background: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* --- Barre de navigation fixe --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a:focus-visible {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  outline: none;
 }
 
 /* En-tête */
@@ -47,6 +84,8 @@ header h1 {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  text-decoration: none;
+  text-align: center;
 }
 
 .cv-button:hover,
@@ -128,26 +167,6 @@ a:focus-visible {
   outline: none;
 }
 
-/* Responsive (mobile) */
-@media screen and (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  .cv-button {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-
-  section {
-    padding: 30px 15px;
-  }
-
-  section h2 {
-    font-size: 1.5rem;
-  }
-}
-
 /* Photo de profil */
 .profile-container {
   display: flex;
@@ -171,4 +190,36 @@ a:focus-visible {
 .profile-pic:focus-visible {
   transform: scale(1.05);
   outline: none;
+}
+
+/* Responsive (mobile) */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .cv-button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .navbar ul li a {
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+  }
 }

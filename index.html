@@ -6,17 +6,158 @@
   <title>Rezgui Mohamed Aziz - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Barre de navigation fixe */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #0047AB;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 8px 12px;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .navbar ul li a:hover {
+      background-color: #003080;
+    }
+
+    /* Pour ne pas que le contenu soit caché sous la navbar */
+    body {
+      padding-top: 60px;
+      scroll-behavior: smooth;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Styles spécifiques */
+    header {
+      background-color: #0047AB;
+      color: white;
+      padding: 100px 20px 60px;
+      text-align: center;
+    }
+
+    .profile-container {
+      margin-bottom: 20px;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      display: block;
+      margin: 0 auto;
+    }
+
+    h1 span.typed-text {
+      color: #f2b632;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .cv-button {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: #f2b632;
+      color: #0047AB;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cv-button:hover {
+      background-color: #d19f29;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 15px;
+    }
+
+    h2 {
+      color: #0047AB;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #0047AB;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .experience-card, .project-card {
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    a {
+      color: #0047AB;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
     <div class="profile-container">
-    <img src="assets/image/img20250411_15450917.png" alt="Photo de profil de Rezgui Aziz" class="profile-pic" />
-  </div>
+      <img src="assets/image/img20250411_15450917.png" alt="Photo de profil de Rezgui Aziz" class="profile-pic" />
+    </div>
     <h1>Bonjour, je suis <span class="typed-text"></span></h1>
     <p class="subtitle">Ingénieur Informatique | Développeur Full Stack</p>
     <a class="cv-button" href="assets/image/cv.pdf" target="_blank" download>Télécharger mon CV</a>
-
   </header>
 
   <section id="about">
@@ -31,7 +172,7 @@
     <h2>Compétences</h2>
     <ul>
       <li><strong>Langages :</strong> Java, C/C++, HTML, CSS, SQL, Python</li>
-      <li><strong>Frameworks :</strong> Symfony, Spring Boot, JavaFX, Qt</li>
+      <li><strong>Frameworks :</strong> Symfony, Spring Boot, JavaFX, Qt, Node.js, Angular</li>
       <li><strong>Outils :</strong> GitHub, Trello, Lucidchart, UML, Jira</li>
       <li><strong>DevOps :</strong> Jenkins, Docker, SonarQube, Prometheus, Grafana</li>
     </ul>
